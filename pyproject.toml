@@ -1,0 +1,27 @@
+[project]
+name = "adtech-campaign-architect"
+version = "0.1.0"
+description = "Prototype ad placement and creative generation architect for adtech campaign planning."
+requires-python = ">=3.10"
+dependencies = [
+  "json-repair>=0.30.0",
+]
+
+[project.optional-dependencies]
+semantic = [
+  "llama-index>=0.10.0",
+  "llama-index-embeddings-huggingface>=0.2.0",
+  "sentence-transformers>=2.7.0",
+]
+
+[project.scripts]
+adtech-campaign = "adtech_campaign_architect.cli:main"
+adtech-demo = "adtech_campaign_architect.app:main"
+adtech-run-pipeline = "adtech_campaign_architect.run_pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

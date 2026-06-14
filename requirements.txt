@@ -1,0 +1,14 @@
+-e .
+json-repair>=0.30.0
+
+# System requirement for the LLM path:
+# - Local install: install the Ollama CLI/app from https://ollama.com.
+# - Docker install: use docker-compose.yml; it runs ollama/ollama as a service.
+# Python cannot install Ollama through pip, but run_pipeline.py will start/pull
+# the configured model (default/fallback: qwen3.5:0.8b) once Ollama is available.
+
+# Optional semantic retrieval path requested in the prompt. The app runs without
+# these installed by using a deterministic local fallback.
+llama-index>=0.10.0
+llama-index-embeddings-huggingface>=0.2.0
+sentence-transformers>=2.7.0
